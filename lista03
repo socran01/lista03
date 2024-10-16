@@ -1,0 +1,270 @@
+  Exercício01:
+
+import java.util.Scanner;
+
+class ex01 {
+  public static void main(String[] args) {
+    
+
+    int canais = 1;
+    int telespectadores = 0;
+    int total;
+    
+    Scanner input = new Scanner(System.in);
+    
+    while(canais !=0){
+    System.out.println("Digite o número do canal (digite 0 para encerrar o progrma): ");
+    canais = input.nextInt();
+    
+    System.out.println("Digite o número de audiência: ");
+    telespectadores = input.nextInt();
+    
+    }
+    
+    total = telespectadores + telespectadores;
+    
+    System.out.println("A porcentagem de audiência é: " + total );
+    
+  }
+}
+-----------------------------------------------------------------
+
+  Exercício02:
+
+import java.util.Scanner;
+
+
+class ex02 {
+ public static void main(String[] args) {
+ 
+   double n1;
+   double n2;
+   double np1;
+   double p1;
+   double np2;
+   double p2;
+   double np3;
+   double p3;
+   int teste = 1;
+   
+   Scanner input = new Scanner (System.in);
+   while (teste != 3){
+    System.out.println("Digite 1 para fazer média aritmética");
+    System.out.println("Digite 2 para fazer a média ponderada: ");
+   	System.out.println("Digite 3 para sair");
+   
+   System.out.println();
+    teste = input.nextInt();
+    
+    switch(teste){
+      case 1:
+        System.out.print("Digita a 1º nota:");
+        n1 = input.nextDouble();
+        System.out.print("Digite a 2º nota:");
+        n2= input.nextDouble();
+        System.out.println("A média das notas é: " + (n1 + n2)/2);
+        break;
+        
+      case 2:
+        System.out.print("Digite a 1º nota: ");
+        np1 = input.nextDouble();
+        System.out.println("Digite o peso dessa prova: ");
+        p1 = input.nextDouble();
+        System.out.print("Digite a 2º nota: ");
+        np2 = input.nextDouble();
+        System.out.println("Digite o peso dessa prova: ");
+        p2 = input.nextDouble();
+        System.out.println("Digite a 3º nota: ");
+        np3 = input.nextDouble(); 
+        System.out.println("Digite o peso dessa prova: ");
+        p3 = input.nextDouble();
+        System.out.println("A média ponderada dessas notas é:" + ((np1 * p1) + (np2 * p2) + (np3 * p3)) / (p1 + p2 + p3));
+        break;
+        
+      case 3:
+        System.out.println("Muito obrigado, volte novamente");
+        break;
+      
+      default:
+        System.out.print("Opção inválida.");
+    
+  }
+}
+}
+}
+
+---------------------------------------------------
+
+  Exercício05:
+
+
+import java.util.Scanner;
+import java.util.ArrayList;
+class Medico {
+    
+    private int idMedico;
+    private String nomeMedico;
+    private String crm;
+    private String especialidade;
+    private String telefone;
+    private String periodoAtendimento;
+  
+  private static ArrayList<Medico> listaMedico = new ArrayList<Medico>();
+  
+  public Medico(){
+  }  
+  
+  public Medico(String nomeMedico, String crm, String especialidade, String telefone, String periodoAtendimento){
+    this.nomeMedico = nomeMedico;
+    this.crm = crm;
+    this.especialidade = especialidade;
+    this.telefone = telefone;
+    this.periodoAtendimento = periodoAtendimento;
+  }
+  
+  
+  //getters e setters 
+  
+  
+  public static void cadastrarMedico(){
+   Scanner input = new Scanner(System.in);
+    //Medico novoMedico = new Medico();
+    
+    System.out.println("Digite o nome do médico: ");
+    String nomeMedico = input.next();
+    System.out.println("Digite o crm do médico: ");
+    String crm = input.next();
+    System.out.println("Digite a especialidade do médico: ");
+    String especialidade = input.next();
+    System.out.println("Digite o telefone do médico: ");
+    String telefone = input.next();
+    System.out.println("Digite o período de atendimento do médico: ");
+    String periodoAtendimento = input.next();
+    
+     Medico novoMedico = new Medico(nomeMedico, crm, especialidade, telefone, periodoAtendimento);
+    
+    listaMedico.add(novoMedico);
+    System.out.println("Médico cadastrado com sucesso!");
+    
+  
+  }
+  
+}
+------------------------------------------------------------
+
+  Exercício06:
+
+import java.util.Scanner;
+import java.util.ArrayList;
+
+class Paciente {
+  
+  private int idPaciente;
+  private String nomePaciente;
+  private String dataNascimento;
+  private String telefone; 
+  private String endereco;
+  
+  
+  private static ArrayList<Paciente> listaPacientes = new ArrayList<Paciente>();
+  
+  public Paciente(){
+  }
+ 
+  public Paciente(String nomePaciente, String dataNascimento, String telefone, String endereco){
+    this.nomePaciente = nomePaciente;
+    this.dataNascimento = dataNascimento;
+    this.telefone = telefone;
+    this.endereco = endereco;
+  }
+  
+  
+  
+  
+
+  //getters e setters
+  
+  public static void cadastrarPaciente(){
+    Scanner input = new Scanner(System.in);
+    //Paciente novoPaciente = new Paciente();
+    
+    System.out.println("Digite o nome do paciente: ");
+    String nomePaciente = input.next();
+    System.out.println("Digite a data de nascimento do paciente: ");
+    String dataNascimento = input.next();
+    System.out.println("Digite o telefone do paciente: ");
+    String telefone = input.next();
+    System.out.println("Digite o endereço do paciente: ");
+    String endereco = input.next();
+    
+    Paciente novoPaciente = new Paciente(nomePaciente, dataNascimento, telefone, endereco);
+    
+    
+    listaPacientes.add(novoPaciente);
+    System.out.println("Paciente cadastrado com sucesso");
+}
+}
+
+----------------------------------------------------------------------
+
+Exercício07:
+
+
+import java.util.Scanner;
+class ex03 {
+  public static void main(String[] args) {
+    
+    Double valor;
+    String nome;
+    Integer quantidade;
+    String numeroCartao;
+    String vencimento;
+    String cvv;
+    Double dinheiro;
+    
+    Scanner input = new Scanner (System.in);
+    
+    
+    
+    System.out.print("Qual o nome do produto: ");
+    nome = input.next();
+    
+    System.out.print("Quantas unidades desse produto pretende comprar: ");
+    quantidade = input.nextInt();
+    
+    System.out.print("Qual o valor unitario desse produto: ");
+    valor = input.nextDouble();
+    
+    
+      System.out.println("Como deseja pagar?");
+      System.out.println("Pressione 1 para pagar com Pix");
+      System.out.println("Pressione 2 para pagar com Cartão de Crédito/Débito");
+      System.out.println("Pressione 3 para pagar com dinheiro");
+    
+    int teste = 1;
+    
+     switch(teste){
+      case 1:
+         System.out.println("Código copia e cola:\n 08472384623478264");
+        break;
+        
+      case 2:
+        System.out.print("Digite o número do cartão: ");
+        numeroCartao = input.next();
+        System.out.println("Digite a data de vencimento do cartão:");
+        vencimento = input.next();
+        System.out.println("Digite o número de segurança: ");
+        cvv = input.next();
+        break;
+        
+      case 3:
+        System.out.print("Insira o valor a pagar: ");
+        dinheiro = input.nextDouble();
+        break;
+      
+      default:
+        System.out.print("Opção inválida.");
+  
+  }
+  }
+}
